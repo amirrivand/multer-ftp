@@ -1,0 +1,52 @@
+{
+  "name": "@amirrivand/multer-ftp",
+  "description": "",
+  "version": "0.0.1",
+  "license": "ISC",
+  "author": "Amir Mohammad Rivand <a_rivand@yahoo.com>",
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "format": "prettier --write \"**/*.ts\"",
+    "lint": "eslint 'lib/**/*.ts' --fix",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
+    "test:e2e": "jest --config ./tests/jest-e2e.json --runInBand",
+    "test:e2e:dev": "jest --config ./tests/jest-e2e.json --runInBand --watch",
+    "prerelease": "npm run build",
+    "release": "release-it",
+    "prepare": "husky"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "multer",
+    "ftp",
+    "multer-ftp",
+    "upload",
+    "express",
+    "nestjs"
+  ],
+ 
+  "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@types/express": "^5.0.0",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.13.1",
+    "basic-ftp": "^5.0.5",
+    "express": "^4.21.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "multer": "^1.4.5-lts.1",
+    "release-it": "^18.1.2",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3"
+  },
+  "lint-staged": {
+    "**/*.{ts,json}": []
+	},
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+}
